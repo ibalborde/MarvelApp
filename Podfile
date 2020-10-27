@@ -6,5 +6,10 @@ target 'MarvelApp' do
   use_frameworks!
 
   # Pods for MarvelApp
+  
+  pod 'FirebaseUI'
+  pod 'Alamofire', '~> 5.2'
+  pod 'SVProgressHUD'
+
 
 end
