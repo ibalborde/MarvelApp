@@ -13,6 +13,9 @@ extension UIColor {
     class func foregroundColorProgres() -> UIColor {
         return UIColor(rgb: 0x0b4677)
     }
+    class func backgroundColor() -> UIColor {
+           return UIColor(rgb: 0xecebf1)
+       }
     
     convenience init(rgb: UInt) {
         self.init(
