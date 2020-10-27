@@ -9,10 +9,10 @@
 import Foundation
 
 struct ConstantsAPI {
-    static let getCharacters = "https://gateway.marvel.com/v1/public/comics"
+    static let getCharacters = "https://gateway.marvel.com:443/v1/public/characters"
 }
 
 struct ConstantsMarvel {
     static let publicKeyMarvel = "8c0021c31caf8fdc961adc55482b9849"
-    static let hashMarvel = "992ef832f6bb6be62f5bd0e120d6adc9"
+    static let hashMarvel = "7e064ef92a5e1709a7ae1df31aec350b"
 }

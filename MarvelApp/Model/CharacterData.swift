@@ -9,12 +9,26 @@
 
 import Foundation
 
-//struct CharacterData: Codable {
-//    let image: String
-//    let name: String
-//    let description: String
-//}
-//
-//struct Characters {
-//    let characters: [CharacterData]
-//}
+struct CharacterData: Codable {
+    var name: String?
+    var description: String?
+    var thumbnail: Thumbnail?
+}
+
+struct Thumbnail: Codable {
+    var path: String?
+    var extensionImage: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case path
+        case extensionImage = "extension"
+    }
+}
+
+struct Characters: Codable {
+    var results: [CharacterData]?
+}
+
+struct Data: Codable {
+    var data: Characters?
+}

@@ -36,7 +36,6 @@
         <!--Characters View Controller-->
         <scene sceneID="Ufj-K5-085">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EdX-X3-fTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Zpg-ds-hrb" customClass="CharactersViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S6g-6l-U9b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -57,21 +56,21 @@
                                                     <rect key="frame" x="16" y="16" width="382" height="99"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Qu-cQ-JT2">
-                                                            <rect key="frame" x="16" y="0.0" width="100" height="100"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="FUW-06-Ka2"/>
                                                                 <constraint firstAttribute="width" constant="100" id="LRq-8c-bPP"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7V-vT-o7V">
-                                                            <rect key="frame" x="132" y="53" width="234" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-6h-mah">
+                                                            <rect key="frame" x="116" y="16" width="250" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-6h-mah">
-                                                            <rect key="frame" x="132" y="16" width="234" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7V-vT-o7V">
+                                                            <rect key="frame" x="116" y="53" width="250" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -87,7 +86,7 @@
                                                         <constraint firstItem="1Qu-cQ-JT2" firstAttribute="top" secondItem="8TM-o4-npO" secondAttribute="top" id="Xfs-V5-4jU"/>
                                                         <constraint firstAttribute="trailing" secondItem="Gbp-6h-mah" secondAttribute="trailing" constant="16" id="iFm-P1-U1Y"/>
                                                         <constraint firstItem="Gbp-6h-mah" firstAttribute="top" secondItem="1Qu-cQ-JT2" secondAttribute="top" constant="16" id="mKI-bc-A4I"/>
-                                                        <constraint firstItem="1Qu-cQ-JT2" firstAttribute="leading" secondItem="8TM-o4-npO" secondAttribute="leading" constant="16" id="mMz-Oj-3Ot"/>
+                                                        <constraint firstItem="1Qu-cQ-JT2" firstAttribute="leading" secondItem="8TM-o4-npO" secondAttribute="leading" id="mMz-Oj-3Ot"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -123,9 +122,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Bic-sg-dsg"/>
                     <connections>
-                        <outlet property="tableView" destination="753-4m-kSD" id="6TV-pH-H78"/>
+                        <outlet property="tableView" destination="753-4m-kSD" id="nhn-Ha-hzN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EdX-X3-fTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1265.217391304348" y="-427.23214285714283"/>
         </scene>

@@ -14,8 +14,7 @@ class CharacterCell: UITableViewCell {
     @IBOutlet weak var characterName: UILabel!
     @IBOutlet weak var characterDescription: UILabel!
     @IBOutlet weak var bgView: UIView!
-    
-    //private var rule: RuleData!
+    private var character: CharacterData!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,12 +28,13 @@ class CharacterCell: UITableViewCell {
     }
     
     @IBAction private func showRuleDetail() {
-        EventBus.post(event: .showCharacterDetail, data: nil)
+        EventBus.post(event: .showCharacterDetail, data: character)
     }
     
-    func setCharacterData() {
-        self.characterName.text = "nombre"
-        self.characterDescription.text = "descripcion"
+    func setCharacterData(character: CharacterData) {
+        self.characterName.text = character.name ?? "no-name"
+        self.characterDescription.text = character.description ?? "no-description"
+        self.character = character
     }
     
 //    func setData(rule: RuleData) {

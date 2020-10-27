@@ -12,7 +12,7 @@
 		333054DC2547CE610049D242 /* EventBuss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333054DB2547CE610049D242 /* EventBuss.swift */; };
 		333054DE2547CF0C0049D242 /* UIView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333054DD2547CF0C0049D242 /* UIView_extension.swift */; };
 		333054E12547D0400049D242 /* CharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333054E02547D0400049D242 /* CharacterData.swift */; };
-		333054E32547D50A0049D242 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333054E22547D50A0049D242 /* APIRequest.swift */; };
+		333054E32547D50A0049D242 /* ManagerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333054E22547D50A0049D242 /* ManagerConnection.swift */; };
 		333054E62547D5C10049D242 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333054E52547D5C10049D242 /* Constants.swift */; };
 		339D9C162547908C0088E8CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339D9C152547908C0088E8CD /* AppDelegate.swift */; };
 		339D9C1A2547908C0088E8CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339D9C192547908C0088E8CD /* ViewController.swift */; };
@@ -32,7 +32,7 @@
 		333054DB2547CE610049D242 /* EventBuss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBuss.swift; sourceTree = "<group>"; };
 		333054DD2547CF0C0049D242 /* UIView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_extension.swift; sourceTree = "<group>"; };
 		333054E02547D0400049D242 /* CharacterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterData.swift; sourceTree = "<group>"; };
-		333054E22547D50A0049D242 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		333054E22547D50A0049D242 /* ManagerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerConnection.swift; sourceTree = "<group>"; };
 		333054E52547D5C10049D242 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		339D9C122547908C0088E8CD /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		339D9C152547908C0088E8CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +77,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3358A6B22548C58700370668 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				333054E22547D50A0049D242 /* ManagerConnection.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		339D9C092547908C0088E8CD = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				333054DF2547D0270049D242 /* Model */,
-				333054D62547C8CB0049D242 /* Characters */,
 				339D9C2B25479D570088E8CD /* Utils */,
 				339D9C152547908C0088E8CD /* AppDelegate.swift */,
+				333054D62547C8CB0049D242 /* Characters */,
 				339D9C192547908C0088E8CD /* ViewController.swift */,
 				339D9C1B2547908C0088E8CD /* Main.storyboard */,
 				339D9C1E254790900088E8CD /* Assets.xcassets */,
@@ -115,10 +123,10 @@
 		339D9C2B25479D570088E8CD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3358A6B22548C58700370668 /* Services */,
 				339D9C2E25479DEF0088E8CD /* Extensions */,
 				339D9C2C25479D860088E8CD /* ProgressHUB.swift */,
 				333054DB2547CE610049D242 /* EventBuss.swift */,
-				333054E22547D50A0049D242 /* APIRequest.swift */,
 				333054E52547D5C10049D242 /* Constants.swift */,
 			);
 			path = Utils;
@@ -293,7 +301,7 @@
 				339D9C3025479E130088E8CD /* UIColor_extension.swift in Sources */,
 				333054DC2547CE610049D242 /* EventBuss.swift in Sources */,
 				333054DE2547CF0C0049D242 /* UIView_extension.swift in Sources */,
-				333054E32547D50A0049D242 /* APIRequest.swift in Sources */,
+				333054E32547D50A0049D242 /* ManagerConnection.swift in Sources */,
 				339D9C162547908C0088E8CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

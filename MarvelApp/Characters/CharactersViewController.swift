@@ -7,19 +7,26 @@
 //
 
 import UIKit
-import Alamofire
 
 class CharactersViewController: UIViewController {
-    
+        
     @IBOutlet private weak var tableView: UITableView!
-    let dataSouce = CharactersViewControllerDataSource()
+    var characters = [CharacterData]()
+    let managerConnection = ManagerConnection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSouce.tableView = tableView
+        //dataSouce.tableView = tableView
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.backgroundColor = UIColor.backgroundColor()
-        self.fetchCharactersData()
+        managerConnection.getCharactersData() { characters in
+            if characters != nil {
+                self.characters = characters!
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,46 +51,33 @@ class CharactersViewController: UIViewController {
     //            destination.rule = rule
     //        }
     
-    func fetchCharactersData() {
-           
-           let endpoint: String = "\(ConstantsAPI.getCharacters)\(ConstantsMarvel.hashMarvel)"
-           
-           AF.request(endpoint, method: .get, encoding: JSONEncoding.default)
-               .responseJSON { response in
-                   debugPrint(response)
-                   
-                   guard let characters = response.value else { return }
-                   //self.items = characters.all
-                   //self.tableView.reloadData()
-           }
-       }
 }
 
-class CharactersViewControllerDataSource: NSObject {
-    weak var tableView: UITableView! {
-        didSet {
-            tableView.dataSource = self
-            tableView.delegate = self
-        }
-    }
-}
+//class CharactersViewControllerDataSource: NSObject {
+//    weak var tableView: UITableView! {
+//        didSet {
+//            tableView.dataSource = self
+//            tableView.delegate = self
+//        }
+//    }
+//}
 
-extension CharactersViewControllerDataSource: UITableViewDataSource {
+extension CharactersViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Character", for: indexPath)
         if let cell = cell as? CharacterCell {
-            //cell.setData(rule: CurrenRules[indexPath.row])
-            cell.setCharacterData()
+            cell.setCharacterData(character: characters[indexPath.row])
+            //cell.setCharacterData()
         }
         return cell
     }
 }
 
-extension CharactersViewControllerDataSource: UITableViewDelegate {
+extension CharactersViewController: UITableViewDelegate {
     
 }

@@ -42,3 +42,14 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: FUIAuthDelegate {
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        if error != nil {
+            return
+        }
+        
+        performSegue(withIdentifier: "HomeTabViewController", sender: self)
+    }
+}
+
