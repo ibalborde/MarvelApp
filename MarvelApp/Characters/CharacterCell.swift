@@ -34,13 +34,8 @@ class CharacterCell: UITableViewCell {
     func setCharacterData(character: CharacterData) {
         self.characterName.text = character.name ?? "no-name"
         self.characterDescription.text = character.description ?? "no-description"
+        print()
+        self.characterImage.sd_setImage(with: character.thumbnailUrl, placeholderImage: UIImage(named: "image_place_holder"))
         self.character = character
     }
-    
-//    func setData(rule: RuleData) {
-//        self.titleLabel.text = rule.title
-//        self.ruleNumerLabel.text = rule.number
-//        self.ruleDescriptionLabel.text = rule.description
-//        self.rule = rule
-//    }
 }

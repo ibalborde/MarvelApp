@@ -13,15 +13,21 @@ struct CharacterData: Codable {
     var name: String?
     var description: String?
     var thumbnail: Thumbnail?
+    var thumbnailUrl: URL? {
+        guard let thumbnail = self.thumbnail,
+        let path = thumbnail.path,
+        let imageExtension = thumbnail.imageExtension else { return nil }
+        return URL(string: "\(path)/standard_medium.\(imageExtension)")
+    }
 }
 
 struct Thumbnail: Codable {
     var path: String?
-    var extensionImage: String?
+    var imageExtension: String?
     
     enum CodingKeys: String, CodingKey {
         case path
-        case extensionImage = "extension"
+        case imageExtension = "extension"
     }
 }
 

@@ -17,18 +17,22 @@ class ManagerConnection {
         let parameters = ["apikey": ConstantsMarvel.publicKeyMarvel, "hash": ConstantsMarvel.hashMarvel, "ts":1] as [String : Any]
         AF.request(endpoint, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil, interceptor: nil)
             .validate(contentType: ["application/json"])
-            .response {
-            (resposeData) in
-            guard let data = resposeData.data else {
-                completion(nil)
-                return }
-            do {
-                let characters = try JSONDecoder().decode(Data.self, from: data)
-                completion(characters.data?.results)
-            } catch {
-                print("Error: \(error.localizedDescription)")
-                completion(nil)
-            }
+            .response { resposeData in
+                if case .failure(_) = resposeData.result {
+                    completion(nil)
+                    return
+                }
+                guard let data = resposeData.data else {
+                    completion(nil)
+                    return
+                }
+                do {
+                    let characters = try JSONDecoder().decode(Data.self, from: data)
+                    completion(characters.data?.results)
+                } catch {
+                    print("Error: \(error.localizedDescription)")
+                    completion(nil)
+                }
         }
     }
 

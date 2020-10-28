@@ -17,25 +17,20 @@ class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //dataSouce.tableView = tableView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = UIColor.backgroundColor()
-        managerConnection.getCharactersData() { characters in
-            if characters != nil {
-                self.characters = characters!
-                self.tableView.reloadData()
-            }
-        }
+        self.fetchData()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        EventBus.listenWithData(target: self, event: .showCharacterDetail) { (character: CharacterData?) in
-//            guard let character = character else { return }
-//            self.performSegue(withIdentifier: "CharacterDetail", sender: character)
-//        }
+        EventBus.listenWithData(target: self, event: .showCharacterDetail) { (character: CharacterData?) in
+            guard let character = character else { return }
+            self.performSegue(withIdentifier: "CharacterDetail", sender: character)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,23 +39,23 @@ class CharactersViewController: UIViewController {
         EventBus.stopListening(target: self)
     }
     
-    //        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //            guard
-    //                let destination = segue.destination as? RuleDetailsViewController,
-    //                let rule = sender as? RuleData else { return }
-    //            destination.rule = rule
-    //        }
+    private func fetchData() {
+        managerConnection.getCharactersData() { characters in
+            if characters != nil {
+                self.characters = characters!
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+            override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                //guard
+                    //let destination = segue.destination as? RuleDetailsViewController,
+                    //let character = sender as? CharacterData else { return }
+                    //destination.rule = character
+            }
     
 }
-
-//class CharactersViewControllerDataSource: NSObject {
-//    weak var tableView: UITableView! {
-//        didSet {
-//            tableView.dataSource = self
-//            tableView.delegate = self
-//        }
-//    }
-//}
 
 extension CharactersViewController: UITableViewDataSource {
     
@@ -72,7 +67,6 @@ extension CharactersViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Character", for: indexPath)
         if let cell = cell as? CharacterCell {
             cell.setCharacterData(character: characters[indexPath.row])
-            //cell.setCharacterData()
         }
         return cell
     }

@@ -386,6 +386,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - FirebaseUI
+  - SDWebImage
   - SVProgressHUD
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `5.0.1`)
 
@@ -457,6 +458,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftEventBus: b30f617a6aca5a9336464b4d3f5931034762f2d5
 
-PODFILE CHECKSUM: a7a674ac77f36170924811e7125631d58712e0cc
+PODFILE CHECKSUM: aeb1b25046aa4de9a1882e60610c911dc101e9a0
 
 COCOAPODS: 1.8.4

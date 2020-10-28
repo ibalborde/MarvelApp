@@ -11,6 +11,7 @@ target 'MarvelApp' do
   pod 'Alamofire', '~> 5.2'
   pod 'SVProgressHUD'
   pod 'SwiftEventBus', :tag => '5.0.1', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
+  pod 'SDWebImage'
 
 
 
