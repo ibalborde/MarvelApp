@@ -14,7 +14,7 @@ class CharacterCell: UITableViewCell {
     @IBOutlet weak var characterName: UILabel!
     @IBOutlet weak var characterDescription: UILabel!
     @IBOutlet weak var bgView: UIView!
-    private var character: CharacterData!
+    private var character: Character!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,11 +31,11 @@ class CharacterCell: UITableViewCell {
         EventBus.post(event: .showCharacterDetail, data: character)
     }
     
-    func setCharacterData(character: CharacterData) {
+    func setCharacterData(character: Character) {
         self.characterName.text = character.name ?? "no-name"
         self.characterDescription.text = character.description ?? "no-description"
         print()
-        self.characterImage.sd_setImage(with: character.thumbnailUrl, placeholderImage: UIImage(named: "image_place_holder"))
+        self.characterImage.sd_setImage(with: character.thumbnail?.url, placeholderImage: UIImage(named: "image_place_holder"))
         self.character = character
     }
 }

@@ -36,6 +36,7 @@
         <!--Characters View Controller-->
         <scene sceneID="Ufj-K5-085">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EdX-X3-fTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Zpg-ds-hrb" customClass="CharactersViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S6g-6l-U9b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -125,7 +126,6 @@
                         <outlet property="tableView" destination="753-4m-kSD" id="nhn-Ha-hzN"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EdX-X3-fTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1265.217391304348" y="-427.23214285714283"/>
         </scene>
