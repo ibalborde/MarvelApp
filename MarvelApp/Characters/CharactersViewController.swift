@@ -41,11 +41,15 @@ class CharactersViewController: UIViewController {
     }
     
     private func fetchData() {
+        ProgressHUD.show()
         let ofset = calculateOfset()
         managerConnection.getCharactersData(ofset: ofset) { characters in
-            if characters != nil {
-                self.characters += characters!
-                self.tableView.reloadData()
+            ProgressHUD.dismiss()
+            if let characters = characters {
+                let oldCount = self.characters.count
+                self.characters += characters
+                let indexes = (oldCount..<self.characters.count).map {IndexPath(row: $0, section:0)}
+                self.tableView.insertRows(at: indexes, with: .automatic)
                 self.countPages += 1
             }
         }
@@ -77,8 +81,7 @@ extension CharactersViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == tableView.numberOfSections - 1 &&
-            indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+        if indexPath.row == self.characters.count - 1 {
             self.fetchData()
         }
     }

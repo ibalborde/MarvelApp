@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -32,11 +33,10 @@ class ViewController: UIViewController {
     
     func showLoginVC() {
         
-        let authUI = FUIAuth.defaultAuthUI()
-        guard authUI != nil else { return }
-        let providers = [FUIEmailAuth()]
-        authUI?.providers = providers
-        let authViewController = authUI!.authViewController()
+        guard let authUI = FUIAuth.defaultAuthUI() else { return }
+        authUI.providers = [FUIEmailAuth()]
+        authUI.delegate = self
+        let authViewController = authUI.authViewController()
         authViewController.modalPresentationStyle = .fullScreen
         self.present(authViewController, animated: true, completion: nil)
     }
@@ -48,7 +48,6 @@ extension ViewController: FUIAuthDelegate {
         if error != nil {
             return
         }
-        
         performSegue(withIdentifier: "HomeTabViewController", sender: self)
     }
 }
