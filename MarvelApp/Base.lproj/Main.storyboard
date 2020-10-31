@@ -186,9 +186,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VWg-h2-Ws0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHeader" id="GDu-5d-3KW" customClass="ComicEventCell" customModule="MarvelApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellHeader" id="GDu-5d-3KW" customClass="ComicEventHeaderCell" customModule="MarvelApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GDu-5d-3KW" id="BhA-Ls-8f3">
@@ -251,6 +251,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="65I-E3-ID8" firstAttribute="top" secondItem="BhA-Ls-8f3" secondAttribute="top" constant="8" id="0cI-Xp-tgj"/>
                                         <constraint firstAttribute="bottom" secondItem="65I-E3-ID8" secondAttribute="bottom" id="Oke-3O-Tmx"/>
@@ -258,6 +259,7 @@
                                         <constraint firstAttribute="trailing" secondItem="65I-E3-ID8" secondAttribute="trailing" constant="8" id="zAD-lL-glq"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="comicEventDateEnd" destination="zj3-AV-V3u" id="vPi-9r-Mki"/>
                                     <outlet property="comicEventDateStart" destination="irH-We-mdz" id="KrT-KQ-mJ7"/>
@@ -282,13 +284,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="r1m-UT-Ubj" firstAttribute="centerX" secondItem="DXE-Lt-kSV" secondAttribute="centerX" id="XPp-3b-MqU"/>
                                                 <constraint firstItem="r1m-UT-Ubj" firstAttribute="centerY" secondItem="DXE-Lt-kSV" secondAttribute="centerY" id="con-k6-HJj"/>
                                             </constraints>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="DXE-Lt-kSV" secondAttribute="trailing" constant="8" id="6v5-kE-zhz"/>
                                         <constraint firstAttribute="bottom" secondItem="DXE-Lt-kSV" secondAttribute="bottom" id="OBp-Ia-M7B"/>
@@ -296,19 +299,20 @@
                                         <constraint firstItem="DXE-Lt-kSV" firstAttribute="leading" secondItem="pTA-aJ-Ljo" secondAttribute="leading" constant="8" id="wAV-hK-iuk"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="title" destination="r1m-UT-Ubj" id="hdg-xq-tuD"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellComics" rowHeight="83" id="4La-II-xMe" customClass="ComicsToDescouseCell" customModule="MarvelApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="180" width="414" height="83"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellComics" rowHeight="114" id="4La-II-xMe" customClass="ComicsToDescouseCell" customModule="MarvelApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="180" width="414" height="114"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4La-II-xMe" id="Pg9-xM-sD6" customClass="ComicsToDescouseCell" customModule="MarvelApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4La-II-xMe" id="Pg9-xM-sD6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rs-07-7n0">
-                                            <rect key="frame" x="8" y="0.0" width="398" height="75"/>
+                                            <rect key="frame" x="8" y="0.0" width="398" height="114"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDY-Bu-uXG">
                                                     <rect key="frame" x="16" y="8" width="366" height="21"/>
@@ -317,44 +321,45 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-bv-jsX">
-                                                    <rect key="frame" x="8" y="45" width="374" height="21"/>
+                                                    <rect key="frame" x="16" y="37" width="366" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raa-2c-RTs">
-                                                    <rect key="frame" x="8" y="66" width="382" height="1"/>
+                                                    <rect key="frame" x="8" y="105" width="382" height="1"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="gMa-qw-u3P"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="yc0-bv-jsX" secondAttribute="trailing" constant="16" id="0fQ-Ps-uYI"/>
-                                                <constraint firstAttribute="trailing" secondItem="iDY-Bu-uXG" secondAttribute="trailing" constant="16" id="4ZZ-7j-YcR"/>
-                                                <constraint firstItem="yc0-bv-jsX" firstAttribute="leading" secondItem="5rs-07-7n0" secondAttribute="leading" constant="8" id="Bi1-ke-nFR"/>
-                                                <constraint firstItem="raa-2c-RTs" firstAttribute="leading" secondItem="5rs-07-7n0" secondAttribute="leading" constant="8" id="C8q-f8-BC2"/>
-                                                <constraint firstItem="yc0-bv-jsX" firstAttribute="top" secondItem="iDY-Bu-uXG" secondAttribute="bottom" constant="16" id="Hnc-wV-CJW"/>
-                                                <constraint firstItem="iDY-Bu-uXG" firstAttribute="top" secondItem="5rs-07-7n0" secondAttribute="top" constant="8" id="JSN-44-hTJ"/>
-                                                <constraint firstItem="iDY-Bu-uXG" firstAttribute="leading" secondItem="5rs-07-7n0" secondAttribute="leading" constant="16" id="LUo-sc-Wx0"/>
-                                                <constraint firstItem="raa-2c-RTs" firstAttribute="top" secondItem="yc0-bv-jsX" secondAttribute="bottom" constant="8" id="ec8-wv-yhf"/>
-                                                <constraint firstAttribute="bottom" secondItem="raa-2c-RTs" secondAttribute="bottom" constant="8" id="hhp-tI-BRF"/>
-                                                <constraint firstAttribute="trailing" secondItem="raa-2c-RTs" secondAttribute="trailing" constant="8" id="stv-96-P3J"/>
+                                                <constraint firstAttribute="trailing" secondItem="yc0-bv-jsX" secondAttribute="trailing" constant="16" id="0M3-Hl-4In"/>
+                                                <constraint firstItem="iDY-Bu-uXG" firstAttribute="leading" secondItem="5rs-07-7n0" secondAttribute="leading" constant="16" id="3ED-lL-OMZ"/>
+                                                <constraint firstItem="raa-2c-RTs" firstAttribute="top" secondItem="yc0-bv-jsX" secondAttribute="bottom" constant="8" id="7Ah-vi-eWj"/>
+                                                <constraint firstAttribute="trailing" secondItem="raa-2c-RTs" secondAttribute="trailing" constant="8" id="8RB-Z7-9mc"/>
+                                                <constraint firstItem="raa-2c-RTs" firstAttribute="leading" secondItem="5rs-07-7n0" secondAttribute="leading" constant="8" id="8sJ-BP-iyI"/>
+                                                <constraint firstItem="yc0-bv-jsX" firstAttribute="top" secondItem="iDY-Bu-uXG" secondAttribute="bottom" constant="8" id="C9k-8K-SvD"/>
+                                                <constraint firstItem="iDY-Bu-uXG" firstAttribute="top" secondItem="5rs-07-7n0" secondAttribute="top" constant="8" id="GH0-SZ-ufG"/>
+                                                <constraint firstItem="yc0-bv-jsX" firstAttribute="leading" secondItem="5rs-07-7n0" secondAttribute="leading" constant="16" id="KHr-u1-0EE"/>
+                                                <constraint firstAttribute="bottom" secondItem="raa-2c-RTs" secondAttribute="bottom" constant="8" id="nlv-RK-cDR"/>
+                                                <constraint firstAttribute="trailing" secondItem="iDY-Bu-uXG" secondAttribute="trailing" constant="16" id="vTx-MH-fWN"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="5rs-07-7n0" firstAttribute="top" secondItem="Pg9-xM-sD6" secondAttribute="top" id="UPz-4z-dku"/>
-                                        <constraint firstAttribute="bottom" secondItem="5rs-07-7n0" secondAttribute="bottom" constant="8" id="bmT-gl-kBw"/>
-                                        <constraint firstItem="5rs-07-7n0" firstAttribute="leading" secondItem="Pg9-xM-sD6" secondAttribute="leading" constant="8" id="jEZ-Ha-npH"/>
-                                        <constraint firstAttribute="trailing" secondItem="5rs-07-7n0" secondAttribute="trailing" constant="8" id="t1U-3r-gyA"/>
+                                        <constraint firstAttribute="trailing" secondItem="5rs-07-7n0" secondAttribute="trailing" constant="8" id="4FG-fM-GkS"/>
+                                        <constraint firstAttribute="bottom" secondItem="5rs-07-7n0" secondAttribute="bottom" id="Zuy-d2-zY0"/>
+                                        <constraint firstItem="5rs-07-7n0" firstAttribute="top" secondItem="Pg9-xM-sD6" secondAttribute="top" id="gjf-yC-P4v"/>
+                                        <constraint firstItem="5rs-07-7n0" firstAttribute="leading" secondItem="Pg9-xM-sD6" secondAttribute="leading" constant="8" id="zfw-nG-y8n"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="dateTitle" destination="yc0-bv-jsX" id="arE-x8-YFv"/>
-                                    <outlet property="title" destination="iDY-Bu-uXG" id="Gs5-ID-MkJ"/>
+                                    <outlet property="dateTitle" destination="yc0-bv-jsX" id="rO7-my-hvp"/>
+                                    <outlet property="title" destination="iDY-Bu-uXG" id="Ccd-6s-TiQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -18,11 +18,12 @@
 		333054E32547D50A0049D242 /* ManagerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333054E22547D50A0049D242 /* ManagerConnection.swift */; };
 		333054E62547D5C10049D242 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333054E52547D5C10049D242 /* Constants.swift */; };
 		333CA5FA254A7D3A0014D524 /* ExpandableComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333CA5F9254A7D3A0014D524 /* ExpandableComic.swift */; };
+		333D119B254DEB49004C21A6 /* ConverDateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333D119A254DEB49004C21A6 /* ConverDateHelper.swift */; };
 		3358A6B42548E2ED00370668 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A6B32548E2EC00370668 /* UIImageView.swift */; };
 		3358A6B62549017F00370668 /* ComicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A6B52549017F00370668 /* ComicEvent.swift */; };
 		3358A6B8254905EA00370668 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A6B7254905EA00370668 /* Thumbnail.swift */; };
 		3358A6BB25491F9000370668 /* ComicEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A6BA25491F9000370668 /* ComicEventsViewController.swift */; };
-		3358A6BD2549212B00370668 /* ComicEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A6BC2549212B00370668 /* ComicEventCell.swift */; };
+		3358A6BD2549212B00370668 /* ComicEventHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A6BC2549212B00370668 /* ComicEventHeaderCell.swift */; };
 		339D9C162547908C0088E8CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339D9C152547908C0088E8CD /* AppDelegate.swift */; };
 		339D9C1A2547908C0088E8CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339D9C192547908C0088E8CD /* ViewController.swift */; };
 		339D9C1D2547908C0088E8CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 339D9C1B2547908C0088E8CD /* Main.storyboard */; };
@@ -47,11 +48,12 @@
 		333054E22547D50A0049D242 /* ManagerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerConnection.swift; sourceTree = "<group>"; };
 		333054E52547D5C10049D242 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		333CA5F9254A7D3A0014D524 /* ExpandableComic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableComic.swift; sourceTree = "<group>"; };
+		333D119A254DEB49004C21A6 /* ConverDateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverDateHelper.swift; sourceTree = "<group>"; };
 		3358A6B32548E2EC00370668 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		3358A6B52549017F00370668 /* ComicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicEvent.swift; sourceTree = "<group>"; };
 		3358A6B7254905EA00370668 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		3358A6BA25491F9000370668 /* ComicEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicEventsViewController.swift; sourceTree = "<group>"; };
-		3358A6BC2549212B00370668 /* ComicEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicEventCell.swift; sourceTree = "<group>"; };
+		3358A6BC2549212B00370668 /* ComicEventHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicEventHeaderCell.swift; sourceTree = "<group>"; };
 		339D9C122547908C0088E8CD /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		339D9C152547908C0088E8CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		339D9C192547908C0088E8CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				3358A6BA25491F9000370668 /* ComicEventsViewController.swift */,
-				3358A6BC2549212B00370668 /* ComicEventCell.swift */,
+				3358A6BC2549212B00370668 /* ComicEventHeaderCell.swift */,
 				332F2E7C254CFF9D00BC767E /* ComicsToDescouseCell.swift */,
 				332F2E7E254D1E6400BC767E /* EventTitleCell.swift */,
 			);
@@ -172,6 +174,7 @@
 				339D9C2F25479E130088E8CD /* UIColor_extension.swift */,
 				333054DD2547CF0C0049D242 /* UIView_extension.swift */,
 				3358A6B32548E2EC00370668 /* UIImageView.swift */,
+				333D119A254DEB49004C21A6 /* ConverDateHelper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,10 +341,11 @@
 				333054DA2547C91C0049D242 /* CharactersViewController.swift in Sources */,
 				339D9C1A2547908C0088E8CD /* ViewController.swift in Sources */,
 				339D9C3025479E130088E8CD /* UIColor_extension.swift in Sources */,
+				333D119B254DEB49004C21A6 /* ConverDateHelper.swift in Sources */,
 				332F2E7F254D1E6400BC767E /* EventTitleCell.swift in Sources */,
 				333054DC2547CE610049D242 /* EventBuss.swift in Sources */,
 				3358A6BB25491F9000370668 /* ComicEventsViewController.swift in Sources */,
-				3358A6BD2549212B00370668 /* ComicEventCell.swift in Sources */,
+				3358A6BD2549212B00370668 /* ComicEventHeaderCell.swift in Sources */,
 				333CA5FA254A7D3A0014D524 /* ExpandableComic.swift in Sources */,
 				333054DE2547CF0C0049D242 /* UIView_extension.swift in Sources */,
 				333054E32547D50A0049D242 /* ManagerConnection.swift in Sources */,

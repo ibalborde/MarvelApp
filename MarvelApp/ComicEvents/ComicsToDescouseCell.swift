@@ -31,6 +31,15 @@ class ComicsToDescouseCell: UITableViewCell {
     
     func set(comicToDescouse: ComicToDiscouse) {
         self.title.text = comicToDescouse.title
-        self.dateTitle.text = "fechita"
+        self.dateTitle.text = getDate(comicToDescouse: comicToDescouse)
+    }
+    
+    private func getDate(comicToDescouse: ComicToDiscouse) -> String{
+        let date = comicToDescouse.dates?.first?.date
+        if date != nil {
+            let dateFormatter = DateFormatter(format: "yyyy-MM-dd'T'HH:mm:ss-SSSS")
+            return date!.toDateTitleString(dateFormatter: dateFormatter)!
+        }
+        return "no-date"
     }
 }

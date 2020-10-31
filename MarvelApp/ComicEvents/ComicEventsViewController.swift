@@ -21,6 +21,7 @@ class ComicEventsViewController: UITableViewController {
         self.fetchEventData()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
+        tableView.backgroundColor = UIColor.backgroundColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +75,7 @@ class ComicEventsViewController: UITableViewController {
         let cellId = comicData.getCellID(index: indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
-        if let cell = cell as? ComicEventCell{
+        if let cell = cell as? ComicEventHeaderCell{
             cell.setComicEventData(expandibleComicEvent: comicData, index: indexPath.section)
             
         }

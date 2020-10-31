@@ -34,10 +34,22 @@ class ComicEventHeaderCell: UITableViewCell {
     func setComicEventData(expandibleComicEvent: ExpandableComic, index: Int) {
         let comicEvent = expandibleComicEvent.comicEvent
         self.comicEventTitle.text = comicEvent.title ?? "no-name"
-        self.comicEventDateStart.text = comicEvent.start ?? "no-description"
-        self.comicEventDateEnd.text = comicEvent.end ?? "no-description"
+        self.comicEventDateStart.text = getDate(date: comicEvent.start)
+        self.comicEventDateEnd.text = getDate(date: comicEvent.end)
         self.comicEventImage.sd_setImage(with: comicEvent.thumbnail?.url, placeholderImage: UIImage(named: "image_place_holder"))
         self.comicEvent = comicEvent
         self.sectionIndex = index
+        
+    }
+    
+    private func getDate(date: String?) -> String{
+        if date != nil {
+            let dateFormatter = DateFormatter(format: "yyyy-MM-dd HH:mm:ss")
+            return date!.toDateHeaderString(dateFormatter: dateFormatter)!
+        }
+        return "no-date"
     }
 }
+
+
+
