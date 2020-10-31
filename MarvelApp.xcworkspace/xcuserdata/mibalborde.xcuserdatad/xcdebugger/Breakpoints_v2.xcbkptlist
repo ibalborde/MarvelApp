@@ -103,16 +103,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FD79BE97-2436-46CE-8C59-B958068A201C"
+            uuid = "A2A30523-B2BD-42B7-B661-AB36929A6A4A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MarvelApp/ComicEvents/ComicEventsViewController.swift"
+            filePath = "MarvelApp/Utils/Services/ManagerConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "performGetRequest(endpoint:params:resultType:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

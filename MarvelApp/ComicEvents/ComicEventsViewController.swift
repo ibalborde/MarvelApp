@@ -10,34 +10,83 @@ import UIKit
 
 class ComicEventsViewController: UITableViewController {
     
-    var comicEvent = [ComicEvent]()
-
+    let managerConnection = ManagerConnection()
+    var comicsToDiscouse = [ComicToDiscouse]()
     
-    let cellId = "cellId123123"
     
-    let names = [
-        "Amy", "Bill", "Amy2", "Bill2",  "Amy3", "Bill3"
-    ]
-    let cNames = [
-        "cAmy", "cBill", "cAmy2", "cBill2",  "cAmy3", "cBill3"
-    ]
-    let dNames = [
-        "dAmy", "dBill", "dAmy2", "dBill2",  "dAmy3", "dBill3"
-    ]
+    var twoDimensionArray = [ExpandableComic]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.fetchEventData()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        EventBus.listenWithData(target: self, event: .toggleDescriptionEvent) { (sectionIndex: Int?) in
+            guard let sectionIndex = sectionIndex else { return }
+            let data = self.twoDimensionArray[sectionIndex]
+            data.toggle()
+            if data.shouldFetchComicsToDiscouse, let fetchURL = data.comicEvent.comics?.collectionURI {
+                self.fetchComicsToDiscouseData(endpoint: fetchURL, index: sectionIndex)
+            } else {
+                self.tableView.reloadSections([sectionIndex], with: .automatic)
+            }
+        }
+    }
+    
+    private func fetchEventData() {
+        ProgressHUD.show()
+        managerConnection.getEvetsData() { events in
+            ProgressHUD.dismiss()
+            guard let events = events else {
+                return
+            }
+            self.twoDimensionArray += events.map { ExpandableComic(comicEvent: $0) }
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func fetchComicsToDiscouseData(endpoint: String, index: Int) {
+        ProgressHUD.show()
+        managerConnection.getEvetsToDiscouse(endpoint: endpoint) { comicsToDiscouse in
+            ProgressHUD.dismiss()
+            if let comicsToDiscouse = comicsToDiscouse {
+                self.twoDimensionArray[index].comicsToDiscouse += comicsToDiscouse
+                self.tableView.reloadSections([index], with: .automatic)
+            }
+        }
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return twoDimensionArray.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return twoDimensionArray[section].cellsCount
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath)
-//        if let cell = cell as? ComicEventCell {
-//                  cell.setComicEventData(comicEvent: comicEvent[indexPath.row])
-//              }
-         return cell
+        let comicData = twoDimensionArray[indexPath.section]
+        let cellId = comicData.getCellID(index: indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        
+        if let cell = cell as? ComicEventCell{
+            cell.setComicEventData(expandibleComicEvent: comicData, index: indexPath.section)
+            
+        }
+        if let cell = cell as? EventTitleCell {
+            cell.set(expandibleComicEvent: comicData)
+        }
+        if let cell = cell as? ComicsToDescouseCell {
+            cell.set(comicToDescouse: comicData.comicsToDiscouse[indexPath.row - 2])
+            
+        }
+        
+        return cell
     }
+    
 }

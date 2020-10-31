@@ -12,15 +12,20 @@ struct ComicEvent: Codable {
     var title: String?
     var description: String?
     var thumbnail: Thumbnail?
-    var start: Date?
-    var end: Date?
+    var start: String?
+    var end: String?
+    var comics: Comic?
+}
+
+struct Comic: Codable {
+    var collectionURI: String?
 }
 
 
-struct ComicEvents: Codable {
+struct ComicsEvents: Codable {
     var results: [ComicEvent]?
 }
 
 struct ComicEventsData: Codable {
-    var data: ComicEvents?
+    var data: ComicsEvents?
 }

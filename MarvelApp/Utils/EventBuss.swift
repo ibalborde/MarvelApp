@@ -12,6 +12,7 @@ import SwiftEventBus
 enum EventBus: String {
     
     case showCharacterDetail
+    case toggleDescriptionEvent
     
     // MARK: - Interface
     

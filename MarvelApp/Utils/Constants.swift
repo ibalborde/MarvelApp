@@ -10,7 +10,8 @@ import Foundation
 
 struct ConstantsAPI {
     static let getCharacters = "https://gateway.marvel.com:443/v1/public/characters"
-    static let getEvents = "https://gateway.marvel.com:443/v1/public/events"
+    static let getEvents = "https://gateway.marvel.com/v1/public/events"
+                            
 }
 
 struct ConstantsMarvel {
