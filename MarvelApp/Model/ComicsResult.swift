@@ -13,12 +13,12 @@ struct ComicToDiscouse: Codable {
     var dates: [ComicDate]?
 }
 
-struct ComicsToDiscouse: Codable {
+struct ComicsResult: Codable {
     var results: [ComicToDiscouse]?
 }
 
-struct ComicToDiscouseData: Codable {
-    var data: ComicsToDiscouse?
+struct Comics: Codable {
+    var data: ComicsResult?
 }
 
 struct ComicDate: Codable {

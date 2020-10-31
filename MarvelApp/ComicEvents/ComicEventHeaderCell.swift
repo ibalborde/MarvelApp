@@ -14,10 +14,14 @@ class ComicEventHeaderCell: UITableViewCell {
     @IBOutlet weak var comicEventTitle: UILabel!
     @IBOutlet weak var comicEventDateStart: UILabel!
     @IBOutlet weak var comicEventDateEnd: UILabel!
+    @IBOutlet weak var arrowButton: UIButton!
+
+    
     var sectionIndex: Int!
     //@IBOutlet weak var bgView: UIView!
     private var comicEvent: ComicEvent!
-
+    var isOn:Bool = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -29,7 +33,7 @@ class ComicEventHeaderCell: UITableViewCell {
     @IBAction private func toggleDescription() {
         EventBus.post(event: .toggleDescriptionEvent, data: sectionIndex)
     }
-
+    
     
     func setComicEventData(expandibleComicEvent: ExpandableComic, index: Int) {
         let comicEvent = expandibleComicEvent.comicEvent
@@ -39,7 +43,7 @@ class ComicEventHeaderCell: UITableViewCell {
         self.comicEventImage.sd_setImage(with: comicEvent.thumbnail?.url, placeholderImage: UIImage(named: "image_place_holder"))
         self.comicEvent = comicEvent
         self.sectionIndex = index
-        
+        self.setButtonImage(isOn: expandibleComicEvent.isExpanded)
     }
     
     private func getDate(date: String?) -> String{
@@ -49,6 +53,12 @@ class ComicEventHeaderCell: UITableViewCell {
         }
         return "no-date"
     }
+    
+    private func setButtonImage(isOn: Bool) {
+        let nameImage = isOn ? "arrow-up" : "arrow-down"
+        arrowButton.setImage(UIImage(named: nameImage), for: .normal)
+    }
+    
 }
 
 

@@ -56,10 +56,10 @@ class CharactersViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //guard
-        //let destination = segue.destination as? RuleDetailsViewController,
-        //let character = sender as? CharacterData else { return }
-        //destination.rule = character
+        guard
+        let destination = segue.destination as? CharacterDetailViewController,
+        let character = sender as? Character else { return }
+        destination.character = character
     }
     private func calculateOfset() -> Int {
         return 15 * self.countPages
@@ -88,5 +88,12 @@ extension CharactersViewController: UITableViewDataSource {
 }
 
 extension CharactersViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        CharacterDetailViewController.prenset(from: self, character: characters[indexPath.row])
+//        self.performSegue(withIdentifier: "CharacterDetail", sender: characters[indexPath.row])
+
+    }
     
 }

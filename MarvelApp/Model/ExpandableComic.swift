@@ -11,7 +11,7 @@ import Foundation
 
 
 class ExpandableComic {
-    private var isExpanded = false
+    private(set) var isExpanded = false
     var shouldFetchComicsToDiscouse: Bool {
         return self.isExpanded && comicsToDiscouse.isEmpty
     }
@@ -28,9 +28,9 @@ class ExpandableComic {
         if index == 0 {
             return "cellHeader"
         } else if index == 1 {
-            return "cellTitleComics"
+            return CenterTitleCell.cellId
         } else {
-            return "cellComics"
+            return TitleDateCell.cellId
         }
     }
     

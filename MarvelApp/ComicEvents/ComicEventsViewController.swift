@@ -19,6 +19,8 @@ class ComicEventsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchEventData()
+        tableView.register(UINib(nibName: "CenterTitleCell", bundle: .main), forCellReuseIdentifier: CenterTitleCell.cellId)
+         tableView.register(UINib(nibName: "TitleDateCell", bundle: .main), forCellReuseIdentifier: TitleDateCell.cellId)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         tableView.backgroundColor = UIColor.backgroundColor()
@@ -79,15 +81,26 @@ class ComicEventsViewController: UITableViewController {
             cell.setComicEventData(expandibleComicEvent: comicData, index: indexPath.section)
             
         }
-        if let cell = cell as? EventTitleCell {
-            cell.set(expandibleComicEvent: comicData)
+        if let cell = cell as? CenterTitleCell {
+            self.set(cell, comicData: comicData)
         }
-        if let cell = cell as? ComicsToDescouseCell {
-            cell.set(comicToDescouse: comicData.comicsToDiscouse[indexPath.row - 2])
+        if let cell = cell as? TitleDateCell {
+            self.set(cell, comicToDiscouse: comicData.comicsToDiscouse[indexPath.row - 2])
+            //cell.set(comicToDescouse: comicData.comicsToDiscouse[indexPath.row - 2])
             
         }
         
         return cell
+    }
+    
+    private func set(_ cell: CenterTitleCell, comicData: ExpandableComic){
+        let title = comicData.comicsToDiscouse.isEmpty ? "NO HAY COMICS A DISCUTIR" : "COMICS A DISCUTIR"
+        cell.setTitle(title: title)
+    }
+    private func set(_ cell: TitleDateCell, comicToDiscouse: ComicToDiscouse) {
+        let title = comicToDiscouse.title ?? "SIN TITULO"
+        let date = comicToDiscouse.dates?.first?.date
+        cell.set(title: title, date: date)
     }
     
 }

@@ -48,7 +48,7 @@ class ManagerConnection {
         print(endpoint)
         print(parameters)
         
-        performGetRequest(endpoint: endpoint, params: parameters, resultType: ComicToDiscouseData.self) { result in
+        performGetRequest(endpoint: endpoint, params: parameters, resultType: Comics.self) { result in
             completion(result?.data?.results)
         }
     }
