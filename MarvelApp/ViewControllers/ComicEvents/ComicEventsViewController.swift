@@ -95,6 +95,7 @@ class ComicEventsViewController: UITableViewController {
         if let cell = cell as? TitleDateCell {
             self.set(cell, comicToDiscouse: comicData.comicsToDiscouse[indexPath.row - 2])            
         }
+        cell.selectionStyle = .none
         
         return cell
     }
