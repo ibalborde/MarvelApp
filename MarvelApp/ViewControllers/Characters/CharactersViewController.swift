@@ -21,6 +21,9 @@ class CharactersViewController: UIViewController {
         self.initConfTable()
         self.fetchData()
         self.navigationItem.title = "MARVEL CHALLENGE"
+        tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
+//        UITabBar.appearance().barTintColor = UIColor(red: 250, green: 250, blue: 250, alpha: )
+
     }
     
     private func fetchData() {

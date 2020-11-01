@@ -207,6 +207,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="joq-Lr-Icr" kind="relationship" relationship="viewControllers" id="akP-yg-p3c"/>
@@ -221,7 +223,7 @@
         <scene sceneID="6yq-xQ-vWe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="joq-Lr-Icr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Personajes" image="pencil.slash" catalog="system" id="sJF-hX-VL8"/>
+                    <tabBarItem key="tabBarItem" title="Personajes" image="characterIconOff" selectedImage="characterIconOn" id="sJF-hX-VL8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="d1C-e4-bvV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -248,7 +250,7 @@
         <scene sceneID="Rq7-9B-mMq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cUT-0H-ncZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Eventos" image="pencil.and.ellipsis.rectangle" catalog="system" id="rDN-aL-p5k"/>
+                    <tabBarItem key="tabBarItem" title="Eventos" image="eventIconOff" selectedImage="eventIconOn" id="rDN-aL-p5k"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pnm-rZ-nob">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -393,7 +395,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
-        <image name="pencil.slash" catalog="system" width="128" height="113"/>
+        <image name="characterIconOff" width="100" height="100"/>
+        <image name="characterIconOn" width="100" height="100"/>
+        <image name="eventIconOff" width="32" height="32"/>
+        <image name="eventIconOn" width="32" height="32"/>
     </resources>
 </document>
