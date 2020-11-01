@@ -15,10 +15,10 @@ class ComicEventHeaderCell: UITableViewCell {
     @IBOutlet weak var comicEventDateStart: UILabel!
     @IBOutlet weak var comicEventDateEnd: UILabel!
     @IBOutlet weak var arrowButton: UIButton!
-
+    @IBOutlet weak var bgView: UIView!
+    
     
     var sectionIndex: Int!
-    //@IBOutlet weak var bgView: UIView!
     private var comicEvent: ComicEvent!
     var isOn:Bool = false
     
@@ -27,7 +27,8 @@ class ComicEventHeaderCell: UITableViewCell {
         
         self.backgroundColor = .clear
         self.contentView.backgroundColor = .clear
-        //self.bgView.cornerRadius = 3
+        self.bgView.cornerRadius = 5
+        self.comicEventImage.round(with: .left, radius: 5)
     }
     
     @IBAction private func toggleDescription() {
@@ -51,14 +52,13 @@ class ComicEventHeaderCell: UITableViewCell {
             let dateFormatter = DateFormatter(format: "yyyy-MM-dd HH:mm:ss")
             return date!.toDateHeaderString(dateFormatter: dateFormatter)!
         }
-        return "no-date"
+        return "SIN FECHA"
     }
     
     private func setButtonImage(isOn: Bool) {
         let nameImage = isOn ? "arrow-up" : "arrow-down"
         arrowButton.setImage(UIImage(named: nameImage), for: .normal)
     }
-    
 }
 
 

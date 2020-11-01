@@ -19,11 +19,9 @@ class ComicEventsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchEventData()
-        tableView.register(UINib(nibName: "CenterTitleCell", bundle: .main), forCellReuseIdentifier: CenterTitleCell.cellId)
-         tableView.register(UINib(nibName: "TitleDateCell", bundle: .main), forCellReuseIdentifier: TitleDateCell.cellId)
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100
-        tableView.backgroundColor = UIColor.backgroundColor()
+        self.navigationItem.title = "MARVEL CHALLENGE"
+        self.initConfTable()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +46,8 @@ class ComicEventsViewController: UITableViewController {
             guard let events = events else {
                 return
             }
-            self.twoDimensionArray += events.map { ExpandableComic(comicEvent: $0) }
+            let eventsOrder = events.reversed()
+            self.twoDimensionArray += eventsOrder.map { ExpandableComic(comicEvent: $0) }
             self.tableView.reloadData()
         }
     }
@@ -63,6 +62,15 @@ class ComicEventsViewController: UITableViewController {
             }
         }
     }
+    
+    private func initConfTable() {
+        tableView.register(UINib(nibName: "CenterTitleCell", bundle: .main), forCellReuseIdentifier: CenterTitleCell.cellId)
+        tableView.register(UINib(nibName: "TitleDateCell", bundle: .main), forCellReuseIdentifier: TitleDateCell.cellId)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        tableView.backgroundColor = UIColor.backgroundColor()
+    }
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return twoDimensionArray.count
@@ -85,9 +93,7 @@ class ComicEventsViewController: UITableViewController {
             self.set(cell, comicData: comicData)
         }
         if let cell = cell as? TitleDateCell {
-            self.set(cell, comicToDiscouse: comicData.comicsToDiscouse[indexPath.row - 2])
-            //cell.set(comicToDescouse: comicData.comicsToDiscouse[indexPath.row - 2])
-            
+            self.set(cell, comicToDiscouse: comicData.comicsToDiscouse[indexPath.row - 2])            
         }
         
         return cell

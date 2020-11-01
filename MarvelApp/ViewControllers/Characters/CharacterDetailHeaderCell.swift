@@ -18,7 +18,6 @@ class CharacterDetailHeaderCell: UITableViewCell {
         
         self.backgroundColor = .clear
         self.contentView.backgroundColor = .clear
-        //self.bgView.cornerRadius = 3
     }
     
     func setComicData(character: ComicCharacter) {

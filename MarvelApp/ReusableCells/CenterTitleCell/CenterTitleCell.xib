@@ -18,11 +18,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcU-Ya-qpl">
-                        <rect key="frame" x="16" y="0.0" width="288" height="44"/>
+                        <rect key="frame" x="8" y="0.0" width="304" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJO-zZ-7rs">
-                                <rect key="frame" x="16" y="16" width="256" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="16" width="272" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -39,8 +39,8 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="dcU-Ya-qpl" secondAttribute="bottom" id="Ydy-Ui-YnH"/>
                     <constraint firstItem="dcU-Ya-qpl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Z1t-Aj-xhd"/>
-                    <constraint firstItem="dcU-Ya-qpl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="rna-vm-MNz"/>
-                    <constraint firstAttribute="trailing" secondItem="dcU-Ya-qpl" secondAttribute="trailing" constant="16" id="xVv-W4-hKR"/>
+                    <constraint firstItem="dcU-Ya-qpl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="rna-vm-MNz"/>
+                    <constraint firstAttribute="trailing" secondItem="dcU-Ya-qpl" secondAttribute="trailing" constant="8" id="xVv-W4-hKR"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

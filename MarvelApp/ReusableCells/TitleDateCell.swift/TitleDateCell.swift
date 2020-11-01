@@ -15,7 +15,7 @@ class TitleDateCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var dateTitle: UILabel!
-    //@IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var bgView: UIView!
     private var comicEvent: ComicEvent!
     
     override func awakeFromNib() {
@@ -23,7 +23,7 @@ class TitleDateCell: UITableViewCell {
         
         self.backgroundColor = .clear
         self.contentView.backgroundColor = .clear
-        //self.bgView.cornerRadius = 3
+        self.bgView.round(with: .bottom, radius: 5)
     }
     
     

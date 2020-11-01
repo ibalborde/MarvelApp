@@ -27,7 +27,7 @@ class ManagerConnection {
     func getEvetsData(completion: @escaping([ComicEvent]?) -> ()) {
         let endpoint = "\(ConstantsAPI.getEvents)"
         let parameters: [String : Any] = [
-            "limit": 5,
+            "limit": 25,
             "orderBy": "-startDate",
             "apikey": ConstantsMarvel.publicKeyMarvel,
             "hash": ConstantsMarvel.hashMarvel,

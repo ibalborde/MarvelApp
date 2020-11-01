@@ -18,22 +18,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYZ-xy-VxW">
-                        <rect key="frame" x="16" y="0.0" width="494" height="358"/>
+                        <rect key="frame" x="8" y="0.0" width="510" height="358"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RZ-7M-QLQ">
-                                <rect key="frame" x="16" y="16" width="462" height="21"/>
+                                <rect key="frame" x="16" y="16" width="478" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAn-o3-KBn">
-                                <rect key="frame" x="16" y="45" width="462" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="45" width="478" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBA-hb-1Sa">
-                                <rect key="frame" x="16" y="349" width="462" height="1"/>
+                                <rect key="frame" x="16" y="349" width="478" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Zvr-Li-My4"/>
@@ -58,12 +58,13 @@
                 <constraints>
                     <constraint firstItem="iYZ-xy-VxW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QNK-s2-Pp1"/>
                     <constraint firstAttribute="bottom" secondItem="iYZ-xy-VxW" secondAttribute="bottom" id="UGb-xM-aIg"/>
-                    <constraint firstAttribute="trailing" secondItem="iYZ-xy-VxW" secondAttribute="trailing" constant="16" id="dXx-Q8-K1n"/>
-                    <constraint firstItem="iYZ-xy-VxW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kic-fg-azc"/>
+                    <constraint firstAttribute="trailing" secondItem="iYZ-xy-VxW" secondAttribute="trailing" constant="8" id="dXx-Q8-K1n"/>
+                    <constraint firstItem="iYZ-xy-VxW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="kic-fg-azc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bgView" destination="iYZ-xy-VxW" id="FYd-fi-sQb"/>
                 <outlet property="dateTitle" destination="YAn-o3-KBn" id="oSW-MO-X0d"/>
                 <outlet property="title" destination="5RZ-7M-QLQ" id="b6f-tS-Ghr"/>
             </connections>

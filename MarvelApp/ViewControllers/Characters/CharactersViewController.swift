@@ -17,27 +17,10 @@ class CharactersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.backgroundColor = UIColor.backgroundColor()
+                
+        self.initConfTable()
         self.fetchData()
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        EventBus.listenWithData(target: self, event: .showCharacterDetail) { (character: ComicCharacter?) in
-            guard let character = character else { return }
-            self.performSegue(withIdentifier: "CharacterDetail", sender: character)
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super .viewWillDisappear(animated)
-        
-        EventBus.stopListening(target: self)
+        self.navigationItem.title = "MARVEL CHALLENGE"
     }
     
     private func fetchData() {
@@ -63,6 +46,12 @@ class CharactersViewController: UIViewController {
     }
     private func calculateOfset() -> Int {
         return 15 * self.countPages
+    }
+    
+    private func initConfTable(){
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = UIColor.backgroundColor()
     }
 }
 
@@ -92,8 +81,6 @@ extension CharactersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         CharacterDetailViewController.prenset(from: self, character: characters[indexPath.row])
-//        self.performSegue(withIdentifier: "CharacterDetail", sender: characters[indexPath.row])
-
     }
     
 }

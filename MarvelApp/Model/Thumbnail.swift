@@ -15,7 +15,7 @@ struct Thumbnail: Codable {
         guard
             let path = self.path,
             let imageExtension = self.imageExtension else { return nil }
-        return URL(string: "\(path)/standard_medium.\(imageExtension)")
+        return URL(string: "\(path)/standard_large.\(imageExtension)")
     }
     var urlLarge: URL? {
           guard
