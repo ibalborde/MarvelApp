@@ -17,6 +17,12 @@ struct Thumbnail: Codable {
             let imageExtension = self.imageExtension else { return nil }
         return URL(string: "\(path)/standard_medium.\(imageExtension)")
     }
+    var urlLarge: URL? {
+          guard
+              let path = self.path,
+              let imageExtension = self.imageExtension else { return nil }
+          return URL(string: "\(path)/portrait_incredible.\(imageExtension)")
+      }
     
     enum CodingKeys: String, CodingKey {
         case path

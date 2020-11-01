@@ -14,7 +14,7 @@ class CharacterCell: UITableViewCell {
     @IBOutlet weak var characterName: UILabel!
     @IBOutlet weak var characterDescription: UILabel!
     @IBOutlet weak var bgView: UIView!
-    private var character: Character!
+    private var character: ComicCharacter!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +31,7 @@ class CharacterCell: UITableViewCell {
         EventBus.post(event: .showCharacterDetail, data: character)
     }
     
-    func setCharacterData(character: Character) {
+    func setCharacterData(character: ComicCharacter) {
         self.characterName.text = character.name ?? "no-name"
         self.characterDescription.text = character.description ?? "no-description"
         print()

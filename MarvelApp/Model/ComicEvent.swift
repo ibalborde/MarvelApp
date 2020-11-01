@@ -14,10 +14,10 @@ struct ComicEvent: Codable {
     var thumbnail: Thumbnail?
     var start: String?
     var end: String?
-    var comics: Comic?
+    var comics: ComicURI?
 }
 
-struct Comic: Codable {
+struct ComicURI: Codable {
     var collectionURI: String?
 }
 

@@ -18,10 +18,10 @@ class SignInViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user {
-                       self.showUserInfo(user:user)
-                   } else {
-                       self.showLoginVC()
-                   }
+                self.showUserInfo(user:user)
+            } else {
+                self.showLoginVC()
+            }
         }
     }
     

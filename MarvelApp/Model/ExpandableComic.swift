@@ -15,7 +15,7 @@ class ExpandableComic {
     var shouldFetchComicsToDiscouse: Bool {
         return self.isExpanded && comicsToDiscouse.isEmpty
     }
-    var comicsToDiscouse = [ComicToDiscouse]()
+    var comicsToDiscouse = [Comic]()
     var cellsCount: Int {
         if isExpanded {
             return comicsToDiscouse.count + 2

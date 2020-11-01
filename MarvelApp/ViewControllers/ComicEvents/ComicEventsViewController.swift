@@ -11,7 +11,7 @@ import UIKit
 class ComicEventsViewController: UITableViewController {
     
     let managerConnection = ManagerConnection()
-    var comicsToDiscouse = [ComicToDiscouse]()
+    var comicsToDiscouse = [Comic]()
     
     
     var twoDimensionArray = [ExpandableComic]()
@@ -55,7 +55,7 @@ class ComicEventsViewController: UITableViewController {
     
     private func fetchComicsToDiscouseData(endpoint: String, index: Int) {
         ProgressHUD.show()
-        managerConnection.getEvetsToDiscouse(endpoint: endpoint) { comicsToDiscouse in
+        managerConnection.getDetails(endpoint: endpoint) { comicsToDiscouse in
             ProgressHUD.dismiss()
             if let comicsToDiscouse = comicsToDiscouse {
                 self.twoDimensionArray[index].comicsToDiscouse += comicsToDiscouse
@@ -97,7 +97,7 @@ class ComicEventsViewController: UITableViewController {
         let title = comicData.comicsToDiscouse.isEmpty ? "NO HAY COMICS A DISCUTIR" : "COMICS A DISCUTIR"
         cell.setTitle(title: title)
     }
-    private func set(_ cell: TitleDateCell, comicToDiscouse: ComicToDiscouse) {
+    private func set(_ cell: TitleDateCell, comicToDiscouse: Comic) {
         let title = comicToDiscouse.title ?? "SIN TITULO"
         let date = comicToDiscouse.dates?.first?.date
         cell.set(title: title, date: date)

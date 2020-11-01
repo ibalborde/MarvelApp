@@ -11,7 +11,7 @@ import UIKit
 class CharactersViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
-    var characters = [Character]()
+    var characters = [ComicCharacter]()
     let managerConnection = ManagerConnection()
     var countPages = 0
     
@@ -28,7 +28,7 @@ class CharactersViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        EventBus.listenWithData(target: self, event: .showCharacterDetail) { (character: Character?) in
+        EventBus.listenWithData(target: self, event: .showCharacterDetail) { (character: ComicCharacter?) in
             guard let character = character else { return }
             self.performSegue(withIdentifier: "CharacterDetail", sender: character)
         }
@@ -58,7 +58,7 @@ class CharactersViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
         let destination = segue.destination as? CharacterDetailViewController,
-        let character = sender as? Character else { return }
+        let character = sender as? ComicCharacter else { return }
         destination.character = character
     }
     private func calculateOfset() -> Int {

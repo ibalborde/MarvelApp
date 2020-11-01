@@ -9,15 +9,15 @@
 
 import Foundation
 
-struct Character: Codable {
+struct ComicCharacter: Codable {
     var name: String?
     var description: String?
     var thumbnail: Thumbnail?
-   
+    var comics: ComicURI?
 }
 
 struct Characters: Codable {
-    var results: [Character]?
+    var results: [ComicCharacter]?
 }
 
 struct CharactersData: Codable {

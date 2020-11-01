@@ -11,7 +11,7 @@ import Alamofire
 
 class ManagerConnection {
     
-    func getCharactersData(ofset: Int,completion: @escaping([Character]?) -> ()) {
+    func getCharactersData(ofset: Int,completion: @escaping([ComicCharacter]?) -> ()) {
         let endpoint = "\(ConstantsAPI.getCharacters)"
         let parameters: [String : Any] = [
             "limit": 15,
@@ -38,7 +38,7 @@ class ManagerConnection {
         }
     }
     
-    func getEvetsToDiscouse(endpoint: String,completion: @escaping([ComicToDiscouse]?) -> ()) {
+    func getDetails(endpoint: String,completion: @escaping([Comic]?) -> ()) {
         let parameters: [String : Any] = [
             "limit": 5,
             "apikey": ConstantsMarvel.publicKeyMarvel,

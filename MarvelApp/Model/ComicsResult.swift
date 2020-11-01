@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct ComicToDiscouse: Codable {
+struct Comic: Codable {
     var title: String?
     var dates: [ComicDate]?
 }
 
 struct ComicsResult: Codable {
-    var results: [ComicToDiscouse]?
+    var results: [Comic]?
 }
 
 struct Comics: Codable {
